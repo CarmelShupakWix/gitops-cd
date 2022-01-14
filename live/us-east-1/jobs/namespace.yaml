@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jobs-production-namespace
+  namespace: argocd
+  annotations:
+    
+    godsCluster: us-east-1
+    godsTeamName: jobs
+    
+    
+spec:
+  syncPolicy: 
+    syncOptions:
+    - CreateNamespace=true
+  project: default
+  source:
+    repoURL: 'https://github.com/gitopsdevsolutions-carmel/gitops-cd'
+    path: 'live/us-east-1/jobs'
+    targetRevision: main
+    plugin:
+      name: argocd-vault-plugin
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: jobs-production
