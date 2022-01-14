@@ -5,6 +5,7 @@ metadata:
   namespace: argocd
   annotations:
     godsAppName: job
+    godsApplicationType: Job
     godsCluster: us-east-1
     godsTeamName: jobs
     godsEnv: production
