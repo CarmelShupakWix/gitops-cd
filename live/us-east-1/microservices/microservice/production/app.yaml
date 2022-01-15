@@ -9,7 +9,7 @@ metadata:
     godsCluster: us-east-1
     godsTeamName: microservices
     godsEnv: production
-    godsEnvConfigurationVersion: 01ea4a670c4cf9bd90f9e0d994321ae128c68c89
+    godsEnvConfigurationVersion: 7947db7d02ad9117970a964445187a122f51cb24
 spec:
   syncPolicy: 
     syncOptions:
