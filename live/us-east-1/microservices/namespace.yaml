@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: microservices-production-namespace
+  namespace: argocd
+  annotations:
+    
+    
+    godsCluster: us-east-1
+    godsTeamName: microservices
+    
+    
+spec:
+  syncPolicy: 
+    syncOptions:
+    - CreateNamespace=true
+  project: default
+  source:
+    repoURL: 'https://github.com/gitopsdevsolutions-carmel/gitops-cd'
+    path: 'live/us-east-1/microservices'
+    targetRevision: main
+    plugin:
+      name: argocd-vault-plugin
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: microservices-production
