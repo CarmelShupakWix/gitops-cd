@@ -9,7 +9,7 @@ metadata:
     godsCluster: us-east-1
     godsTeamName: jobs
     godsEnv: production
-    godsEnvConfigurationVersion: 86131d0e090f3a46d9d29d26a122dd100eeda902
+    godsEnvConfigurationVersion: 45af4539326671fda1a2a2d9eb4732cfaa9519b6
 spec:
   syncPolicy: 
     syncOptions:
@@ -23,7 +23,7 @@ spec:
       values: |
         env:
           GODS_DURATION: "10"
-          GODS_SHOULD_FAIL: true
+          GODS_SHOULD_FAIL: false
         interval: "*/1 * * * *"
         image: gitopsdevsolutions/cronjob
         tag: latest
