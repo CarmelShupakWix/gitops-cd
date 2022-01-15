@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: us-east-1-jobs-cronjob-production
+  namespace: argocd
+  annotations:
+    godsAppName: cronjob
+    godsApplicationType: Cron
+    godsCluster: us-east-1
+    godsTeamName: jobs
+    godsEnv: production
+    godsEnvConfigurationVersion: 45af4539326671fda1a2a2d9eb4732cfaa9519b6
+spec:
+  syncPolicy: 
+    syncOptions:
+    - CreateNamespace=true
+  project: default
+  source:
+    repoURL: 'https://github.com/gitopsdevsolutions/opinionated-charts'
+    path: 'charts/base-cron-job'
+    targetRevision: main
+    helm:
+      values: |
+        env:
+          GODS_DURATION: "10"
+          GODS_SHOULD_FAIL: false
+        interval: "*/1 * * * *"
+        image: gitopsdevsolutions/cronjob
+        tag: latest
+        createdAt: 2022-01-15 14:02:45 +0000 UTC
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: jobs-production
