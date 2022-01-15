@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: us-east-1-microservices-microservice-production
+  namespace: argocd
+  annotations:
+    godsAppName: microservice
+    
+    godsCluster: us-east-1
+    godsTeamName: microservices
+    godsEnv: production
+    godsEnvConfigurationVersion: 7947db7d02ad9117970a964445187a122f51cb24
+spec:
+  syncPolicy: 
+    syncOptions:
+    - CreateNamespace=true
+  project: default
+  source:
+    repoURL: 'https://github.com/gitopsdevsolutions/opinionated-charts'
+    path: 'charts/base-app'
+    targetRevision: main
+    helm:
+      values: |
+        env:
+          GODS_DURATION: "10"
+          GODS_SHOULD_FAIL: false
+        image: gitopsdevsolutions/microservice
+        tag: latest
+        createdAt: 2022-01-15 23:43:41 +0000 UTC
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: microservices-production
