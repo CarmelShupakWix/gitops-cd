@@ -9,7 +9,7 @@ metadata:
     godsCluster: us-east-1
     godsTeamName: jobs
     godsEnv: production
-    godsEnvConfigurationVersion: c7f5f4a704d1f9c7a21ab728a2c600b4a01e4c95
+    godsEnvConfigurationVersion: 19cf47f46de4352925b9cba292e80af0e291f00d
 spec:
   syncPolicy: 
     syncOptions:
@@ -23,7 +23,7 @@ spec:
       values: |
         env:
           GODS_DURATION: "10"
-          GODS_SHOULD_FAIL: false
+          GODS_SHOULD_FAIL: true
         image: gitopsdevsolutions/job
         tag: latest
         createdAt: 2022-01-15 14:02:39 +0000 UTC
