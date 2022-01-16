@@ -9,7 +9,7 @@ metadata:
     godsCluster: us-east-1
     godsTeamName: microservices
     godsEnv: production
-    godsEnvConfigurationVersion: de30388b81f9a9e31ec5986aab01d2e42cbea79f
+    godsEnvConfigurationVersion: 7947db7d02ad9117970a964445187a122f51cb24
 spec:
   syncPolicy: 
     syncOptions:
@@ -23,7 +23,7 @@ spec:
       values: |
         env:
           GODS_DURATION: "10"
-          GODS_SHOULD_FAIL: true
+          GODS_SHOULD_FAIL: false
         image: gitopsdevsolutions/microservice
         tag: latest
         createdAt: 2022-01-15 23:43:41 +0000 UTC
