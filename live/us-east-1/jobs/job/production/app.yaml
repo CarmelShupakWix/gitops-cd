@@ -9,7 +9,7 @@ metadata:
     godsCluster: us-east-1
     godsTeamName: jobs
     godsEnv: production
-    godsEnvConfigurationVersion: c7f5f4a704d1f9c7a21ab728a2c600b4a01e4c95
+    godsEnvConfigurationVersion: 7947db7d02ad9117970a964445187a122f51cb24
 spec:
   syncPolicy: 
     syncOptions:
@@ -26,7 +26,7 @@ spec:
           GODS_SHOULD_FAIL: false
         image: gitopsdevsolutions/job
         tag: latest
-        createdAt: 2022-01-15 14:02:39 +0000 UTC
+        createdAt: 2022-01-15 23:42:00 +0000 UTC
   destination:
     server: https://kubernetes.default.svc
     namespace: jobs-production
