@@ -20,7 +20,8 @@ spec:
     path: 'live/us-east-1/third-party'
     targetRevision: main
     plugin:
-      name: argocd-vault-pluginhelm:
+      name: argocd-vault-plugin
+    helm:
       values: |
         
   destination:
