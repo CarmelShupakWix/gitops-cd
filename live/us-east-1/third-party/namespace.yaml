@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: third-party-production-namespace
+  namespace: argocd
+  annotations:
+    
+    
+    godsCluster: us-east-1
+    godsTeamName: third-party
+    
+    
+spec:
+  syncPolicy: 
+    syncOptions:
+    - CreateNamespace=true
+  project: default
+  source:
+    repoURL: 'https://github.com/gitopsdevsolutions-carmel/gitops-cd'
+    path: 'live/us-east-1/third-party'
+    targetRevision: main
+    plugin:
+      name: argocd-vault-pluginhelm:
+      values: |
+        destination:
+    server: https://kubernetes.default.svc
+    namespace: third-party-production
