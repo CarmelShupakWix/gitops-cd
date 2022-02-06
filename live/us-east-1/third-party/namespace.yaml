@@ -18,7 +18,7 @@ spec:
   source:
     repoURL: 'https://github.com/gitopsdevsolutions-carmel/gitops-cd'
 	path: 'live/us-east-1/third-party'
-    path: 'live/us-east-1/third-party'
+    
     targetRevision: main
     plugin:
       name: argocd-vault-plugin
