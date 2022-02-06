@@ -22,6 +22,7 @@ spec:
     plugin:
       name: argocd-vault-pluginhelm:
       values: |
-        destination:
+        
+  destination:
     server: https://kubernetes.default.svc
     namespace: third-party-production
