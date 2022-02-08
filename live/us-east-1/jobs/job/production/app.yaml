@@ -9,7 +9,7 @@ metadata:
     godsCluster: us-east-1
     godsTeamName: jobs
     godsEnv: production
-    godsEnvConfigurationVersion: c7f5f4a704d1f9c7a21ab728a2c600b4a01e4c95
+    godsEnvConfigurationVersion: db23c8530e7bca92c660a923877fa7da70d402a7
 spec:
   syncPolicy: 
     syncOptions:
@@ -19,6 +19,7 @@ spec:
     repoURL: 'https://github.com/gitopsdevsolutions/opinionated-charts'
     path: 'charts/base-job'
     targetRevision: main
+    
     helm:
       values: |
         env:
